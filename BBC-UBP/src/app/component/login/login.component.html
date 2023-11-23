@@ -1,0 +1,37 @@
+<div class="bootstrap-wrapper">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center mt">
+                    Login here!!
+
+                </h1>
+
+                <form #loginForm = "ngForm" (ngSubmit)="onSubmit(loginForm)">
+                    <div class="form-group"> 
+                        <label for="username">CustomerID:</label>
+                         <input #customerId [(ngModel)] = "credentials.username"                    
+                         type="text" id="username" name="username"  required>
+                       
+                      </div>
+                  
+                      <div class="form-group">
+                        <label for="password">OTP:</label>
+                        <input #OTP [(ngModel)] = "credentials.password"                       
+                         type="password" id="password" name="password" required>
+                      </div>
+
+                      <button type="submit" (click) = "login(customerId.value,OTP.value)">Login</button>
+                      <br>
+                      <button type ="Change mt">Reset</button>
+                </form>
+               
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+

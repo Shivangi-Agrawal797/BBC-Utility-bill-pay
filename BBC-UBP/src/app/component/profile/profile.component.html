@@ -1,0 +1,51 @@
+ <div class="bootstrap-wrapper">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center mt">
+                   YOUR PROFILE INFORMATION
+
+                </h1>
+
+                <table class="table">
+                  <tr >
+                      <td><label for="ID">Customer ID:</label></td>
+                      <td>{{profile.customerId}}</td> <!-- Display customer ID -->
+                  </tr>
+                  <tr>
+                      <td><label for="Name">Customer Name:{{ profile.customerName }}</label></td>
+                      <td>{{ profile.customerName }}</td> <!-- Display customer name -->
+                  </tr>
+                  <tr>
+                      <td><label for="Email">Customer Email:</label></td>
+                      <td>{{ profile.customerEmail }}</td> <!-- Display customer email -->
+                  </tr>
+                  <tr>
+                      <td><label for="Contact">Customer Contact:</label></td>
+                      <td>{{ profile.customerContact }}</td> <!-- Display customer contact -->
+                  </tr>
+                  <tr>
+                      <td><label for="Address">Customer Address:</label></td>
+                      <td>{{ profile.customerAddress }}</td> <!-- Display customer address -->
+                  </tr>
+              </table>
+
+
+                      <button routerLink ="/dashboard">Back</button>
+                      <br>
+                      <button type ="Change mt">Reset</button>
+
+                      <div>
+                        <router-outlet></router-outlet>
+                      </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</div>  
+
+
+

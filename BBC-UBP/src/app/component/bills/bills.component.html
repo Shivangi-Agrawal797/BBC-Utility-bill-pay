@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>YOUR    ALL    BILLS    INFORMATION</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Bill ID</th>
+        <th>Unit Consumption</th>
+        <th>Bill Due Date</th>
+        <th>Bill Duration In Month</th>
+        <th>Bill Amount</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bill of bills">
+        <td>{{ bill.billId }}</td>
+        <td>{{ bill.unitConsumption }}</td>
+        <td>{{ bill.billDueDate  | date }}</td>
+        <td>{{ bill.billDuration }}</td>
+        <td>{{ bill.billAmount }}</td>
+        <!-- <td>{{ bill.ispaid ? 'Paid' : 'Unpaid' }}</td> -->
+        <td>
+        <button (click)="navigateToBillDetails(bill)" *ngIf="bill.isPaid" routerLink="/paid">Paid</button>
+        <button (click)="navigateToBillDetails(bill)" *ngIf="!bill.isPaid" routerLink="/unpaid">Unpaid</button>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
